@@ -1,6 +1,10 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/path/to/your/styles.css"> <!-- Correct URL -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -15,6 +19,8 @@
 
 <body id="body" data-spy="scroll" data-target=".header">
     <div id="scroll-icon" onclick="Scroll()" > <i class="fas fa-angle-up"></i></div>
+    <div  > <i class="fas fa-angle-up"></i></div>
+
     <nav class="navbar navbar-expand-lg navbar-light fixed-top right  ">
 
         <a class="navbar-brand " href="# "><img class="w-50 " src="images/logo-light.png "></a>
@@ -30,11 +36,9 @@
                 </li>
                 <li class=" nav-item "><a class="nav-link px-2 " href="# ">Home</a>
                 </li>
-                <li class=" nav-item">
-                    <a class="nav-link px-2 " href="#Team ">Teams</a>
-                </li>
-                <li class=" nav-item">
-                    <a class="nav-link px-2 " href="#price ">Prices</a>
+           
+                <li class="nav-item">
+                    <a class="nav-link px-2 " href="#tasks ">Tasks</a>
                 </li>
                 <li class=" nav-item ">
                     <a class="nav-link px-2 " href="#contact ">Contact</a>
@@ -105,244 +109,93 @@
         </div>
     </div>
     </div>
-    <div  id ="Team"class="team ">
-        <h3>Creative Team</h3>
-        <p>We are digital thinkers</p>
-    </div>
+   
 
-    <div class="container ">
-        <div class="row ">
-            <div class="col-lg-3 col-md-6 ">
-                <div class="item2 ">
+    <div class="container " id="tasks">
+        <div class="row mt-3">
+            <div class="col-md-6 ">
+            <h3>  Add New Task </h3>
+            <form class='add-post-form'>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title-value" >
 
 
-                    <img src="images/team-1.jpg ">
 
-                    <div class="info ">
-                        <i class="fab fa-twitter "></i>
-                        <i class="fab fa-facebook "></i>
-                        <i class="fab fa-Instagram "></i>
-                        <h4>LUKE CAGE</h4>
-                        <p>Founder & CEO</p>
-                    </div>
-
+                    <div class="form-group">
+                        <label for="body">Content</label>
+                        <textarea class="form-control" id="body-value" ></textarea> 
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 ">
-                <div class="item2 ">
+                <button type="submit" id='submit' class="btn btn-primary">Add Task</button>
 
-                    <img src="images/team-2.jpg ">
-
-                    <div class="info ">
-                        <i class="fab fa-twitter "></i>
-                        <i class="fab fa-facebook "></i>
-                        <i class="fab fa-Instagram "></i>
-                        <h4>JESSICA JONES</h4>
-                        <p>Product Designer</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 ">
-                <div class="item2 ">
-
-                    <img src="images/team-3.jpg ">
-
-                    <div class="info ">
-                        <i class="fab fa-twitter "></i>
-                        <i class="fab fa-facebook "></i>
-                        <i class="fab fa-Instagram "></i>
-                        <h4>MATT MURDOCK</h4>
-                        <p>Lead Developer</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 ">
-                <div class="item2 ">
-
-                    <img src="images/team-4.jpg ">
-
-                    <div class="info ">
-                        <i class=" link fab fa-twitter "></i>
-                        <i class="fab fa-facebook "></i>
-                        <i class="fab fa-Instagram "></i>
-                        <h4>CLAIRE TEMPLE</h4>
-                        <p>Sales Manager</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+            </form>
     </div>
     </div>
+            </form>
+            <div class="posts-list row ">
+               
+                  </div>
 
-    <div id ="price"class="section2 ">
-        <h5>Cheap Prices</h5>
-        <p>We provide the best quality.</p>
-    </div>
+
+                
+            </div>
+
+</div>
+
+   
     <br>
     <br>
 
 
-    <div class="pricing-table ">
-        <div class="pricing-card ">
-            <h6 class="pricing-card-header ">Starter</h6>
-            <div class="price "><sup>$</sup>9
-            </div>
-            <ul>
-                <li><strong>Unlimited Connections</strong></li>
-                <li><strong>24/7 Support</strong></li>
-                <li><strong>Full SSL Protection</strong></li>
-                <li><strong>Unlimited Channels</strong></li>
-            </ul>
-            <a href="# " class="Order-btn ">Sign Up</a>
-        </div>
-        <div class="pricing-card ">
-            <h6 class="pricing-card-header ">Silver</h6>
-            <div class="price "><sup>$</sup>19
-            </div>
-            <ul>
-                <li><strong>Unlimited Connections</strong></li>
-                <li><strong>24/7 Support</strong></li>
-                <li><strong>Full SSL Protection</strong></li>
-                <li><strong>Unlimited Channels</strong></li>
-            </ul>
-            <a href="# " class="Order-btn ">Sign Up</a>
-        </div>
-        <div class="pricing-card ">
-            <h6 class="pricing-card-header ">Gold</h6>
-            <div class="price "><sup>$</sup>29
-            </div>
-            <ul>
-                <li><strong>Unlimited Connections</strong></li>
-                <li><strong>24/7 Support</strong></li>
-                <li><strong>Full SSL Protection</strong></li>
-                <li><strong>Unlimited Channels</strong></li>
-            </ul>
-            <a href="# " class="Order-btn ">Sign Up</a>
-        </div>
-        <div class="pricing-card ">
-            <h6 class="pricing-card-header ">Platinum</h6>
-            <div class="price "><sup>$</sup>49
-            </div>
-            <ul>
-                <li><strong>Unlimited Connections</strong></li>
-                <li><strong>24/7 Support</strong></li>
-                <li><strong>Full SSL Protection</strong></li>
-                <li><strong>Unlimited Channels</strong></li>
-            </ul>
-            <a href="# " class="Order-btn ">Sign Up</a>
-
-        </div>
-    </div>
-    <section class="happy bg-white py-5 ">
-        <div class="container-fluid ">
-            <div class="row mb-3 ">
-            </div>
-            <div class="row ">
-                <div class="col-md-8 m-auto ">
-                    <div id="carouselExampleCaptions " class="carousel slide " data-ride="carousel ">
-                        <ol class="carousel-indicators ">
-                            <li data-target="#carouselExampleCaptions " data-slide-to="0 " class="active "></li>
-                            <li data-target="#carouselExampleCaptions " data-slide-to="1 "></li>
-                            <li data-target="#carouselExampleCaptions " data-slide-to="2 "></li>
-                        </ol>
-                        <div class="carousel-inner ">
-
-                            <div class="carousel-item active ">
-                                <div class="hello-item text-center ">
-
-                                    <h7 class="edit h7 ">HAPPY CUSTOMERS</h7>
-                                    <br>
-                                    <img src="images/testimonial-1.jpg "
-                                        class="rounded-circle border p-1 bg-white mb-4 "><br>
-                                    <h8>Marissa Mayer</h8><br>
-                                    <p class="text-muted ">CEO,YAHOO</p><br>
-                                    <p class="text-muted p-2 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Amet nulla delectus est eum quibusdam laborum ex dolorem molestias totam. Quo
-                                        ullam libero molestias qui, iste illum voluptate. Commodi, labore? Illo
-                                        quisquam enim recusandae, sapiente quas ducimus accusantium laudantium at
-                                        dolores. Similique error vero vitae, accusamus odio quasi suscipit libero sint!
-                                    </p>
-
-
-
-                                </div>
-                            </div>
-                            <div class="carousel-item ">
-                                <div class="hello-item text-center ">
-
-                                    <h7 class="edit h7 ">HAPPY CUSTOMERS</h7>
-                                    <br>
-                                    <img src="images/testimonial-2.jpg "
-                                        class="rounded-circle border p-1 bg-white mb-4 "><br>
-
-                                    <h9>Marissa Mayer</h9><br>
-                                    <p class="text-muted ">CEO,YAHOO</p><br>
-                                    <p class="text-muted p-2 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Amet nulla delectus est eum quibusdam laborum ex dolorem molestias totam. Quo
-                                        ullam libero molestias qui, iste illum voluptate. Commodi, labore? Illo
-                                        quisquam enim recusandae, sapiente quas ducimus accusantium laudantium at
-                                        dolores. Similique error vero vitae, accusamus odio quasi suscipit libero sint!
-                                    </p>
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- <div class="container2 ">
+ 
+    <div class="container2">
         <div class="row ">
-            <div class="col-lg-6 col-md-3 ">
+            <div class="col-lg-6 col-md-12 ">
                 <div class="map-wrapper ">
-                    <div map>
+                    
                         <iframe class="google-map "
                             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10499.966498430253!2d2.2944813!3d48.8583701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8ddca9ee380ef7e0!2z2KjYsdisINil2YrZgdmR2YQ!5e0!3m2!1sar!2seg!4v1605577651890!5m2!1sar!2seg "
-                            width="50% " height="450 " frameborder="0 " style="border:0; " allowfullscreen=" "
-                            aria-hidden="false " tabindex="0 "></iframe>
+                            width="100% " height="450 " frameborder="0 " style="border:0; " allowfullscreen=" "
+                            aria-hidden="false " tabindex="0 " frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-                    </div>
+                    
                 </div>
             </div>
 
-            <div id ="contact"class="col-lg-6 col-md-3 ">
 
+            <div id ="contact"class="col-lg-6 col-md-12 ">
+<div class="container form-container">
+    <h4>Get In Touch</h4>
 
-                <h4>Get In Touch</h4>
+    <p>Let's work together.</p>
 
-                <p>Let's work together.</p>
-
-                <form>
+                <form onsubmit="return validateForm()">
 
                     <div class="form-group ">
-                        <label for="exampleFormControlInput1 ">Your name</label>
-                        <input type="text " class="form-control " id="exampleFormControlInput1 " placeholder=" ">
+                        <label for="nameInput">Your name</label>
+                        <input type="text " class="form-control "  id="nameInput" placeholder="Enter your name" required>
                     </div>
                     <div class="form-group ">
-                        <label for="exampleFormControlInput1 ">Your Email</label>
-                        <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder=" ">
+                        <label for="emailInput">Your Email</label>
+                        <input type="email " class="form-control " id= "emailInput" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group ">
-                        <label for="exampleFormControlInput1 ">Phone Number</label>
-                        <input type="text " class="form-control p-2 " id="exampleFormControlInput1 " placeholder=" ">
+                        <label for="phoneInput">Phone Number</label>
+                        <input type="text " class="form-control p-2 " id="phoneInput" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group ">
-                        <label for="exampleFormControlTextarea1 ">Your Message</label>
-                        <textarea class="form-control " id="exampleFormControlTextarea1 " rows="3 "></textarea>
+                        <label for="messageTextarea">Your Message</label>
+                        <textarea class="form-control " id="messageTextarea" rows="3 " placeholder="Enter your message" required></textarea>
                     </div>
-                    <button type="button " class="btn btn-primary ">SendMessage</button>
-
+                    <div class="form-group ">
+                    <button type="submit" class="btn btn-primary btn-block ">SendMessage</button>
+                </div>
                 </form>
             </div>
         </div>
-
-    </div> -->
+</div>
+</div>
+    
     <script src="script.js"></script>
 
 </body>
