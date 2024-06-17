@@ -2,8 +2,10 @@ const postsList=document.querySelector('.posts-list');
 const addPostForm=document.querySelector('.add-post-form');
 const titleValue=document.getElementById('title-value');
 const bodyValue=document.getElementById('body-value');
-// const url='https://jsonplaceholder.typicode.com/todos';
+const btnSubmit =document.querySelector('.btn');
+let url='https://jsonplaceholder.typicode.com/todos';
 let scrollicon = document.getElementById("scroll-icon");
+let postsArray = [];
 window.onscroll = function() {sFunction()};
 function validateForm() {
   // Get form values
@@ -59,8 +61,8 @@ function Scroll() {
   document.documentElement.scrollTop = 0; 
 }
 
-let output='';
 const renderPosts=(posts)=> {
+  let output='';
   posts.forEach(post => {
      
     output += `
@@ -68,8 +70,11 @@ const renderPosts=(posts)=> {
     <div class="card-body" data-id=${post.id}>
       <h5 class="card-title">${post.title}</h5>
       <p class="card-text">lorem nknnmlnljk</p>
-      <a href="#" class="card-link" id='edit-post'>Edit</a>
-      <a href="#" class="card-link" id='delete-post'>Delete</a>
+      <p class="card-text ${post.completed ? 'completed' : 'not-completed'}">
+      ${post.completed ? 'Completed' : 'Not Completed'}
+  </p>
+      <a href="#" class="card-link" id='edit-post'> Edit</a>
+      <a href="#" class="card-link" id='delete-post'> Delete</a>
     </div>
   </div>
 
@@ -80,17 +85,20 @@ const renderPosts=(posts)=> {
 
 fetch (url)
 .then(res => res.json())
-.then(data =>  renderPosts(data))
+.then(data => {
+  postsArray = data;
+  renderPosts(postsArray);
+})
 postsList.addEventListener('click', (e) => {
   e.preventDefault();
   
   // Determine if the delete or edit button is pressed
-  let delButtonIsPressed = e.target.id === 'delete-post';
-  let editButtonIsPressed = e.target.id === 'edit-post';
+  let delButtonIsPressed = e.target.id == 'delete-post';
+  let editButtonIsPressed = e.target.id == 'edit-post';
   
   // Retrieve the post's ID from the parent element's dataset
   let id = e.target.parentElement.dataset.id;
-  
+  console.log(id)
   // If the delete button is pressed, proceed with deletion
   if (delButtonIsPressed) {
     console.log(`Attempting to delete post with ID: ${id}`); // Logging for debugging
@@ -98,21 +106,41 @@ postsList.addEventListener('click', (e) => {
       method: 'DELETE',
     })
     .then(res => {
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
+      if (res.ok) {
+        postsArray = postsArray.filter(post => post.id != id);
+        renderPosts(postsArray);
       }
-      return res.json();
+     
     })
-    .then(() => {
-      console.log(`Post with ID: ${id} successfully deleted`); // Logging for debugging
-      location.reload();
+    }
+    if (editButtonIsPressed){
+      // console.log('edit post')
+      const parent=e.target.parentElement;
+      let titleContent=parent.querySelector('.card-title').textContent;
+      let bodyContent=parent.querySelector('.card-text').textContent;
+      console.log(titleContent);
+      titleValue.value=titleContent;
+      bodyValue.value=bodyContent;
+    }
+    btnSubmit.addEventListener('click',(e) => {
+      e.preventDefault;
+       fetch(`${url}/${id}`, {
+        method: 'PATCH',
+        headers:{
+          'Content-type':'application/json'
+        },
+        body: JSON.stringify({
+          title :titleValue.value,
+        body:bodyValue.value
+        })
+      })
+      .then(res => res.json())
+.then(()=> location.reload())
+  })
     })
-    .catch(error => {
-      // Handle any errors that occur during the fetch
-      console.error('Error deleting post:', error);
-    });
-  }
-});
+    console.log(postsArray);
+  
+
   
 addPostForm.addEventListener('submit',(e) =>{
   e.preventDefault();
@@ -138,5 +166,7 @@ body:bodyValue.value
     renderPosts(dataArr);
 
   })
+titleValue.value='';
+bodyValue.value='';
 })
 

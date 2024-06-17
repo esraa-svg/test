@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TodoList</title>
     <link rel="stylesheet" href="/path/to/your/styles.css"> <!-- Correct URL -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -21,44 +21,32 @@
     <div id="scroll-icon" onclick="Scroll()" > <i class="fas fa-angle-up"></i></div>
     <div  > <i class="fas fa-angle-up"></i></div>
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top right  ">
-
-        <a class="navbar-brand " href="# "><img class="w-50 " src="images/logo-light.png "></a>
-
-
-        <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarNavDropdown">
-
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">
+            <img class="w-50" src="images/logo-light.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse  d-flex flex-row order-2 order-sm-3 " id="navbarSupportedContent ">
-            <ul class="navbar-nav ml-auto flex-row  ">
-                <li class="nav-item active  "><a class="nav-link px-2 "  href="# "></a>
-                </li>
-                <li class=" nav-item "><a class="nav-link px-2 " href="# ">Home</a>
-                </li>
-           
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+               
                 <li class="nav-item">
-                    <a class="nav-link px-2 " href="#tasks ">Tasks</a>
+                    <a class="nav-link px-2" href="#tasks">Tasks</a>
                 </li>
-                <li class=" nav-item ">
-                    <a class="nav-link px-2 " href="#contact ">Contact</a>
+                <li class="nav-item">
+                    <a class="nav-link px-2" href="#contact">Contact</a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item">
                     <a class="nav-link px-2" href="#about">About</a>
                 </li>
-                <li class="nav-item "><a class="nav-link px-2" href="#"> <i class="fab fa-twitter "></i></a></li>
-                <li class="nav-item "><a class="nav-link px-2" href="https://www.facebook.com/"> <i
-                            class="fab fa-facebook "></i></a></li>
-                <li class="nav-item "><a class="nav-link px-2" href="#"> <i class="fab fa-Instagram"></i></a></li>
-
-
-
-
+                <li class="nav-item">
+                    <a class="nav-link px-2" href="#"><i class="fab fa-instagram"></i></a>
+                </li>
             </ul>
-         
-
         </div>
     </nav>
+    
 
     <div id="carouselExampleIndicators " class="carousel slide carousel-fade  " data-ride="carousel" data-interval="2000">
         <ol class="carousel-indicators">
@@ -120,7 +108,7 @@
                     <label for="title">Title</label>
                     <input type="text" class="form-control" id="title-value" >
 
-
+                </div>
 
                     <div class="form-group">
                         <label for="body">Content</label>
@@ -131,18 +119,8 @@
             </form>
     </div>
     </div>
-            </form>
-            <div class="posts-list row ">
-               
-                  </div>
-
-
-                
+            <div class="posts-list row "></div>
             </div>
-
-</div>
-
-   
     <br>
     <br>
 
